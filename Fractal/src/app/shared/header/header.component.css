@@ -1,0 +1,27 @@
+.top {
+    display: flex;
+    align-items: center;  
+    justify-content: space-between; 
+    padding: 1px 30px;
+}
+.fractal-logo {
+    margin-top: 20px; 
+}
+
+.btns {
+    display: flex;
+    gap: 60px;
+    /* The buttons will now align vertically because of align-items: center on .top */
+}
+
+.nav-btn{
+    font-size: x-large;
+}
+
+.login{
+    background: linear-gradient(to right, #002BFF , #FF00BF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}

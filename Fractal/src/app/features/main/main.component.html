@@ -1,0 +1,81 @@
+<div class="main-page-container">
+    <app-header [ngClass]="{'scrolled-header': isHeaderScrolled}"></app-header> 
+        
+    <section class="hero-section">
+        <p class="hero-text">
+            Fractal is more than just a gaming clan; we're a dedicated community forged through APB: Reloaded.
+            <br><br> 
+            While we were born from the pursuit of high-level play, today our focus is broader—we're a group of friends bonded by competitive gaming.
+            <br><br>
+            Fractal is an invite only platform.
+        </p>
+        <img src="/fractal_logo.png" alt="FRACTAL" class="hero-logo">
+        
+        <a (click)="scrollToNextSection()" class="scroll-down-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                <path d="M7 10l5 5 5-5z"/>
+            </svg>
+        </a>
+    </section>
+
+    <section class="games-section" id="games-section-start">
+        <p class="section-title">Different games, same mindset.</p>
+        <div class="game-logos">
+            <img 
+                *ngFor="let game of featuredGames" 
+                [src]="game.logo" 
+                [alt]="game.name" 
+                class="game-logo"
+            >
+        </div>
+        <img src="/games.png" alt="games" class="games-image">
+    </section>
+
+    <p class="section-title"></p>
+
+    <section class="showcase-section">
+        <p class="section-title">Designs & Colors</p>
+        <div class="designs-section">
+            <div class="color-palette">
+                <div>
+                    <div style="background: #EA00FF; width: 100px; height: 100px; border-radius: 10px;"></div>
+                    <p class="section-title">Pink</p>
+                    <p class="section-title">#EA00FF</p>
+                </div>
+                <div>
+                    <div style="background: #7300FF; width: 100px; height: 100px; border-radius: 10px;"></div>
+                    <p class="section-title">Purple</p>
+                    <p class="section-title">#7300FF</p>
+                </div>
+                <div>
+                    <div style="background: #1A00FF; width: 100px; height: 100px; border-radius: 10px;"></div>
+                    <p class="section-title">Blue</p>
+                    <p class="section-title">#1A00FF</p>
+                </div>
+                <div>
+                    <div style="background: #0871F9; width: 100px; height: 100px; border-radius: 10px;"></div>
+                    <p class="section-title">Light Blue</p>
+                    <p class="section-title">#0871F9</p>
+                </div>
+            </div>
+
+            <div class="image-carousel-container"> <div class="carousel-slides">
+            
+                    <img *ngFor="let slide of carouselImages; let i = index" 
+                        [src]="slide.url" 
+                        [alt]="slide.caption" 
+                        class="carousel-image"
+                        [class.active]="i === currentSlideIndex"> </div>
+
+                <button class="carousel-btn prev" (click)="prevSlide()">&#10094;</button> <button class="carousel-btn next" (click)="nextSlide()">&#10095;</button> <div class="carousel-indicators">
+                    <span *ngFor="let slide of carouselImages; let i = index"
+                        [class.active]="i === currentSlideIndex"
+                        (click)="goToSlide(i)"></span>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <app-footer></app-footer>
+</div>

@@ -1,0 +1,208 @@
+
+app-header {
+    /* 'transparent' as the initial state */
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+app-header.scrolled-header {
+    background-color: black;
+}
+
+/* Arrow Styling */
+.scroll-down-arrow {
+    position: absolute; 
+    bottom: 30px; 
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 50; 
+    cursor: pointer;
+    text-decoration: none;
+    
+    /* Style for the SVG icon */
+    width: 30px; 
+    height: 30px;
+}
+
+.scroll-down-arrow svg {
+    fill: #FFFFFF; /* Arrow color */
+}
+
+/* Subtle Hover and Animation */
+.scroll-down-arrow:hover {
+    opacity: 0.8;
+}
+
+.scroll-down-arrow svg {
+    /* Set up the initial state for the animation */
+    animation: bounce 2s infinite; 
+}
+
+/* Define the 'bounce' keyframe animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px); /* Move up */
+    }
+    60% {
+        transform: translateY(-5px); /* Move slightly less up */
+    }
+}
+
+.main-page-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-logo{
+    margin-right: 10%;
+    margin-bottom: 20%;
+    width: 40%;
+}
+.hero-text{
+    font-size: x-large;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.hero-section {
+    min-height: 95vh; /* Takes the whole page height */
+    /* Set up background image */
+    background-image: url('/bg_fractal.svg');
+    background-size: cover;
+    background-position: center center;
+    /* make the background 'stick' */
+    background-attachment: fixed; 
+    /* Center the content inside the hero section (optional) */
+        display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.section-title{
+    text-align: center;
+}
+.game-logos{
+    padding-top: 50px;
+    display: flex;
+    align-items:center;
+    justify-content: space-evenly;
+}
+
+.games-image{
+    margin-top: 30px;
+    width: 100%;
+    /* margin: 10px; */
+}
+.games-section{
+    padding-top: 100px;
+    margin-bottom: 50px;
+}
+.showcase-section{
+    padding-top: 50px;
+}
+
+.games-section, .showcase-section {
+    background-color: black; /* Dark color to contrast the header */
+}
+
+.designs-section{
+ padding-top: 50px;
+ padding-bottom: 80px;
+ display: flex;
+ justify-content: space-evenly;
+}
+
+.color-palette{
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding: 100px;
+}
+
+/* Container for the whole carousel */
+.image-carousel-container {
+    width: 600px; /* Set a desired size for your carousel */
+    height: 400px;
+    position: relative;
+    overflow: hidden; /* This hides all non-active slides */
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* Wrapper for all slides, ensures they all take up the container size */
+.carousel-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Individual Images */
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit:contain; /* Ensures the image fills the slide without distortion */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Default: hidden */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
+}
+
+/* Active Slide (Shown) */
+.carousel-image.active {
+    opacity: 1; /* Only the active image is visible */
+}
+
+/* Navigation Buttons (Arrows) */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 24px;
+    border-radius: 50%;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+/* Indicators (Dots) */
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.carousel-indicators span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-indicators span.active {
+    background: linear-gradient(to right,#EA00FF,#1A00FF);
+}

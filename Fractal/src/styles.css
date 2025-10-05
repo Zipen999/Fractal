@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+
+.splash-screen {
+    transition: opacity 0.5s ease-out; 
+    position: fixed;
+    z-index: 9999;
+} 
+.splash-logo {
+    position: fixed;
+    height: 40%;
+    top: 50%; /* Move the element's top edge to the vertical center */
+    left: 50%; /* Move the element's left edge to the horizontal center */
+    transform: translate(-50%, -50%); /* Shift the element back by half its own width and height */
+} 
+.splash-background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trademark{
+    position: fixed;
+    font-size: 14px;
+    top: 70%;
+    left: 45%;
+    text-align: center;
+}
+
+
+/* CLASS TO HIDE THE SCREEN: 
+   This class will be added by TypeScript to fade out the splash screen.
+*/
+.splash-screen.fade-out {
+    opacity: 0;
+    /* After transition, remove it completely from the DOM flow */
+    pointer-events: none; 
+}
+
+@font-face {
+    font-family: 'Orbitron'; 
+    src: url('/fonts/Orbitron-VariableFont_wght.ttf') format('truetype'); 
+}
+
+body {
+    /* global dark theme style */
+    background-color: #111023; 
+
+
+    margin: 0px;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif; 
+}
