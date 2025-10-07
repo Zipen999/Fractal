@@ -1,14 +1,43 @@
 
 <div class="top">
     <div class="fractal-logo">
-        <img src="/fractal_text.png" alt="FRACTAL" style="height: 60px;">
+        <a [routerLink]="['/']" routerLinkActive="active-link" ariaCurrentWhenActive="page">
+            <img src="/fractal_text.png" alt="FRACTAL" style="height: 60px;">
+        </a>
     </div>
 
-    <div class="btns">
-        <p  class="nav-btn">MEMBERS</p>
-        <p  class="nav-btn">VIDEOS</p>
-        <p  class="nav-btn">CONTACT</p>
-        <p  class="login nav-btn">login</p>
-    </div>
+    <nav class="btns">
+        <a class="nav-btn"            
+            *ngFor="let item of navItems"
+            [routerLink]="[item.path]"
+            routerLinkActive="active-link"
+            ariaCurrentWhenActive="page"
+        >
+            {{ item.label }}
+        </a>
+
+        <!-- Conditional Admin Link -->
+        <!-- We use the async pipe and a structural directive to check the user role -->
+        <ng-container *ngIf="userRole$.toString() === 'Admin'">
+            <a 
+                [routerLink]="['/admin']"
+                routerLinkActive="active-link"
+                class="nav-link admin-link"
+                ariaCurrentWhenActive="page"
+            >
+                Manage
+            </a>
+        </ng-container>
+        <ng-container *ngIf="userRole$.toString() === 'Guest'">
+            <a 
+                [routerLink]="['/login']"
+                routerLinkActive="active-link"
+                class="login"
+                ariaCurrentWhenActive="page"
+            >
+                login
+            </a>
+        </ng-container>
+    </nav>
     
 </div>

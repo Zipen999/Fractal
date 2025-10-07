@@ -1,0 +1,35 @@
+<div class="header-container" style="display: flex; align-items: center; justify-content: space-between;">
+    <!-- Dropdown Menu for Nav Buttons -->
+    <div class="nav-dropdown">
+        <button class="dropdown-btn">Menu &#9662;</button>
+        <div class="dropdown-content" style="display: none; position: absolute;">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- Flags Carousel with Fractal Logos -->
+    <div class="flags-carousel" style="display: flex; align-items: center; overflow-x: auto; gap: 8px;">
+        <img src="assets/flags/flag1.png" alt="Flag 1" style="height:32px;">
+        <img src="assets/fractal-logo.png" alt="Fractal Logo" style="height:24px;">
+        <img src="assets/flags/flag2.png" alt="Flag 2" style="height:32px;">
+        <img src="assets/fractal-logo.png" alt="Fractal Logo" style="height:24px;">
+        <img src="assets/flags/flag3.png" alt="Flag 3" style="height:32px;">
+        <img src="assets/fractal-logo.png" alt="Fractal Logo" style="height:24px;">
+        <img src="assets/flags/flag4.png" alt="Flag 4" style="height:32px;">
+    </div>
+
+    <!-- Fractal Logo on the Right -->
+    <div class="logo-right">
+        <img src="assets/fractal-logo.png" alt="Fractal Logo" style="height:40px;">
+    </div>
+</div>
+
+<script>
+    // Simple dropdown toggle
+    document.querySelector('.dropdown-btn').onclick = function() {
+        const content = document.querySelector('.dropdown-content');
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    };
+</script>

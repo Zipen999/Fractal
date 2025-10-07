@@ -8,13 +8,26 @@
     margin-top: 20px; 
 }
 
+.fractal-logo:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
 .btns {
     display: flex;
     gap: 60px;
-    /* The buttons will now align vertically because of align-items: center on .top */
 }
 
-.nav-btn{
+.nav-btn, .login{
+    font-size: x-large;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-btn:hover, .login:hover {
+    color:#0871F9 ;
+    transition: all 0.3s ease;
+    transform: translateY(-2px);
     font-size: x-large;
 }
 
@@ -24,4 +37,5 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
+    text-decoration: none;
 }

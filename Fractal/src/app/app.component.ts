@@ -33,6 +33,6 @@ export class AppComponent implements OnInit {
         splashScreen.remove();
       }, 700); 
 
-    }, 1000); // 1sec delay
+    }, 2000); // 0sec delay
   }
 }

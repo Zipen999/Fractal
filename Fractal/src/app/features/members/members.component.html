@@ -1,1 +1,30 @@
-<p>members works!</p>
+<app-headeranimated></app-headeranimated>
+       
+    <section class="members-hero-section">
+        <p class="hero-text">
+            Meet the core members of Fractal, a community built on friendship and competitive gaming.
+            <br><br> 
+            Our members are more than just gamers; they are friends who share a passion for excellence in APB: Reloaded and beyond.
+            <br><br>
+            Each member brings unique skills and personalities that contribute to the vibrant culture of Fractal.
+        </p>
+        <img src="/fractal_logo.png" alt="FRACTAL" class="hero-logo">
+        
+    </section>
+
+    <section class="members-section" id="members-section-start">
+        <p class="section-title">Our Members</p>
+        <div class="member-cards">
+            <div 
+                *ngFor="let member of members" 
+                class="member-card"
+            >
+                <img [src]="member.avatar" [alt]="member.name" class="member-avatar">
+                <h3 class="member-name">{{ member.name }}</h3>
+                <p class="member-role">{{ member.role }}</p>
+                <p class="member-bio">{{ member.bio }}</p>
+            </div>
+        </div>
+    </section>
+
+    <app-footer></app-footer>
